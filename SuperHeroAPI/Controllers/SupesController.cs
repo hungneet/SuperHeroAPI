@@ -20,12 +20,13 @@ namespace SuperHeroAPI.Controllers
         {   if (await this.context.Supes.ToListAsync() == null) return BadRequest("No Supes has been added");
             return Ok(await this.context.Supes.ToListAsync());
         }
-        [HttpGet("Search")]
+        [HttpGet("{id}")]
         public async Task<ActionResult<Supes>> Get(int id)
         {   var hero = await this.context.Supes.FindAsync(id);
             if (hero == null) return BadRequest("Hero not found");
             return Ok(hero);
         }
+
         [HttpPost]
         public async Task<ActionResult<List<Supes>>> AddSupe(Supes supe)
         {   
@@ -43,13 +44,10 @@ namespace SuperHeroAPI.Controllers
             supedb.Superpower = request.Superpower;
 
             await this.context.SaveChangesAsync();
-            return Ok(await this.context.Supes.ToListAsync());
-            
-         
-  
+            return Ok(await this.context.Supes.ToListAsync());         
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<ActionResult<List<Supes>>> Delete(int id)
         {
             var supedb = await this.context.Supes.FindAsync(id);
