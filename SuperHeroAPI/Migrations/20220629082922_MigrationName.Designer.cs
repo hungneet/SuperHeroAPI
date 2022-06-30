@@ -11,8 +11,8 @@ using SuperHeroAPI.Data;
 namespace SuperHeroAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220628071954_CreateInitial")]
-    partial class CreateInitial
+    [Migration("20220629082922_MigrationName")]
+    partial class MigrationName
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -35,11 +35,11 @@ namespace SuperHeroAPI.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("PhotoUrl")
+                    b.Property<string>("Superpower")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Superpower")
+                    b.Property<string>("WebsiteUrl")
                         .IsRequired()
                         .HasColumnType("text");
 

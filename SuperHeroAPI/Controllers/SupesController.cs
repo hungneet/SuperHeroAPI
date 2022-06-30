@@ -27,6 +27,7 @@ namespace SuperHeroAPI.Controllers
             return Ok(hero);
         }
 
+
         [HttpPost]
         public async Task<ActionResult<List<Supes>>> AddSupe(Supes supe)
         {   

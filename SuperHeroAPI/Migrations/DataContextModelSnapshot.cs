@@ -33,11 +33,11 @@ namespace SuperHeroAPI.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("PhotoUrl")
+                    b.Property<string>("Superpower")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Superpower")
+                    b.Property<string>("WebsiteUrl")
                         .IsRequired()
                         .HasColumnType("text");
 
